@@ -33,8 +33,7 @@ firstPic.className ="dualipa-img";
 firstPic.style.position="absolute";
 firstPic.style.top="0";
 firstPic.style.width = "100%";
-firstPic.style.right="0";
-firstPic.zIndex = "8";
+
 firstPic.src = "https://miro.medium.com/max/796/0*RvMsLpxkzR2_EQEV";
 document.querySelector(".first-award").append(firstPic);
 
@@ -63,7 +62,7 @@ firstSong.style.top="15%";
 firstSong.style.right="30%";
 firstSong.style.textAlign ="center";
 firstSong.style.fontSize = "3rem";
-firstSong.style.opacity="1";
+firstSong.style.opacity="0";
 document.querySelector(".first-award").append(firstSong);
 
 // first gif
@@ -83,6 +82,15 @@ document.querySelector(".first-award").append(firstGif);
 
 
 //first hover mv 
+firstSong.addEventListener("mouseover", function(){
+  firstGif.style.removeProperty("display");
+  firstPic.style.display="none";
+  firstSong.style.opacity="1";
+  firstSong.style.textTransform="uppercase";
+
+  firstSong.style.zIndex="2";
+  firstTitle.style.opacity="0";
+})
 firstPic.addEventListener("mouseover", function(){
   firstGif.style.removeProperty("display");
   firstPic.style.display="none";
@@ -90,13 +98,36 @@ firstPic.addEventListener("mouseover", function(){
   firstSong.style.zIndex="2";
   firstTitle.style.opacity="0";
 })
+firstTitle.addEventListener("mouseover", function(){
+  firstGif.style.removeProperty("display");
+  firstPic.style.display="none";
+  firstSong.style.opacity="1";
+  firstSong.style.zIndex="2";
+  firstTitle.style.opacity="0";
+})
+firstTitle.addEventListener("mouseout", function(){
+  firstGif.style.display = "none";
+  firstPic.style.removeProperty('display');
+  firstSong.style.opacity="0";
+  firstTitle.style.opacity="1";
+  
+})
 firstPic.addEventListener("mouseout", function(){
   firstGif.style.display = "none";
   firstPic.style.removeProperty('display');
   firstSong.style.opacity="0";
   firstTitle.style.opacity="1";
+  firstSong.style.textTransform="none";
+  firstSong.style.textDecoration="none";
 })
-
+firstSong.addEventListener("mouseout", function(){
+  firstGif.style.display = "none";
+  firstPic.style.removeProperty('display');
+  firstSong.style.opacity="0";
+  firstTitle.style.opacity="1";
+  firstSong.style.textTransform="none";
+  firstSong.style.textDecoration="none";
+})
 
 
 
@@ -181,13 +212,42 @@ secondPic.addEventListener("mouseover", function(){
   secondSong.style.opacity="1";
   secondTitle.style.opacity="0";
 })
+secondSong.addEventListener("mouseover", function(){
+  secondGif.style.removeProperty("display");
+  secondPic.style.display="none";
+  secondSong.style.opacity="1";
+  secondTitle.style.opacity="0";
+  secondSong.style.textTransform="uppercase";
+
+  secondSong.style.zIndex="2";
+
+})
+secondTitle.addEventListener("mouseover", function(){
+  secondGif.style.removeProperty("display");
+  secondPic.style.display="none";
+  secondSong.style.opacity="1";
+  secondTitle.style.opacity="0";
+})
+secondTitle.addEventListener("mouseout", function(){
+  secondGif.style.display = "none";
+  secondPic.style.removeProperty('display');
+  secondSong.style.opacity="0";
+  secondTitle.style.opacity="1";
+})
 secondPic.addEventListener("mouseout", function(){
   secondGif.style.display = "none";
   secondPic.style.removeProperty('display');
   secondSong.style.opacity="0";
   secondTitle.style.opacity="1";
 })
-
+secondSong.addEventListener("mouseout", function(){
+  secondGif.style.display = "none";
+  secondPic.style.removeProperty('display');
+  secondSong.style.opacity="0";
+  secondTitle.style.opacity="1";
+  secondSong.style.textTransform="none";
+  secondSong.style.textDecoration="none";
+})
 
 
 
@@ -283,5 +343,21 @@ bottom.addEventListener("mouseout", function(){
   thirdSong.style.opacity="0";
   thirdTitle.style.opacity="1";
 })
+thirdSong.addEventListener("mouseover", function(){
+  thirdGif.style.removeProperty("display");
+  thirdPic.style.display="none";
+  thirdSong.style.opacity="1";
+  thirdTitle.style.opacity="0";
+  thirdSong.style.textTransform="uppercase";
+  thirdSong.style.zIndex="2";
 
+})
 
+bottom.addEventListener("mouseout", function(){
+  thirdGif.style.display = "none";
+  thirdPic.style.removeProperty('display');
+  thirdSong.style.opacity="0";
+  thirdTitle.style.opacity="1";
+  thirdSong.style.textTransform="none";
+  thirdSong.style.textDecoration="none";
+})
