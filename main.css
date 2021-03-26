@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Voyage-Regular";
+    src: url("./assets/Voyage-Regular.otf") format("otf"); 
+  }
+  @font-face {
+    font-family: "Voyage-Bold";
+    src: url("./assets/Voyage-Bold.otf") format("otf"); 
+  }
